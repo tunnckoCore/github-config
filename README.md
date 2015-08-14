@@ -12,11 +12,49 @@ npm test
 ```
 
 
-## Usage
+## API
 > For more use-cases see the [tests](./test.js)
+
+### [githubConfig](./index.js#L41)
+> If you give some data to `config` it will be merged to already exisit, or will just add it to `[github]` field of the `.gitconfig` or specified in `config.path`.
+
+- `[config]` **{Object}** pass object to set/merge some data
+  + `[config.path]` **{String}** give a path to `.gitconfig`
+  + `[config.cwd]` **{String}** provide current working directory
+- `returns` **{Object}** config data
+
+**Example**
 
 ```js
 var githubConfig = require('github-config')
+var config = githubConfig({token: '8843d7f92416211de9ebb963ff4ce28125932878'})
+
+console.log(config.token)
+//=> '8843d7f92416211de9ebb963ff4ce28125932878'
+```
+
+Let say you already have some config data in `.gitconfig`, also in `[github]` field
+
+```ini
+[user]
+email=mameto_100@mail.bg
+name=tunnckoCore
+user=tunnckoCore
+
+[push]
+default=simple
+
+[github]
+username=tunnckoCore
+
+```
+you can just get the the exisiting from `[github]` field
+
+```js
+var githubConfig = require('github-config')
+
+console.log(githubConfig())
+//=> {username: 'tunnckoCore'}
 ```
 
 

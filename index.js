@@ -17,24 +17,45 @@ lazy.omit = lazy('object.omit')
 lazy.write = lazy('write')
 lazy.merge = lazy('merge-deep')
 
-module.exports = function githubConfig (options) {
-  var opts = extend({cwd: '/', path: gitconfig}, options)
-  var config = parse.sync(opts)
+/**
+ * If you give some data to `config` it will be merged
+ * to already exisit, or will just add it to `[github]` field
+ * of the `.gitconfig` or specified in `config.path`.
+ *
+ * **Example**
+ *
+ * ```js
+ * var githubConfig = require('github-config')
+ * var config = githubConfig({token: '8843d7f92416211de9ebb963ff4ce28125932878'})
+ *
+ * console.log(config.token)
+ * //=> '8843d7f92416211de9ebb963ff4ce28125932878'
+ * ```
+ *
+ * @name  githubConfig
+ * @param  {Object} `[config]` optionally pass object to set/merge some data
+ * @return {Object} config data
+ * @api public
+ */
 
-  if (!isObject(config)) {
+module.exports = function githubConfig (config) {
+  var opts = extend({cwd: '/', path: gitconfig}, config)
+  var cfg = parse.sync(opts)
+
+  if (!isObject(cfg)) {
     return null
   }
 
-  options = lazy.omit()(options, ['cwd', 'path'])
+  config = lazy.omit()(config, ['cwd', 'path'])
 
-  if (config.hasOwnProperty('github') && !Object.keys(options).length) {
-    return config.github
+  if (cfg.hasOwnProperty('github') && !Object.keys(config).length) {
+    return cfg.github
   }
 
   var merge = lazy.merge()
-  var github = merge({}, config.github, options)
-  config = merge({}, config, {github: github})
+  var github = merge({}, cfg.github, config)
+  cfg = merge({}, cfg, {github: github})
 
-  lazy.write().sync(opts.path, lazy.ini().stringify(config))
-  return config.github
+  lazy.write().sync(opts.path, lazy.ini().stringify(cfg))
+  return cfg.github
 }
