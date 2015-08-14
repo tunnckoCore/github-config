@@ -58,6 +58,14 @@ console.log(githubConfig())
 ```
 
 
+## Related
+- [git-config-path](https://github.com/jonschlinkert/git-config-path): Resolve the path to the user's global .gitconfig.
+- [git-user-name](https://github.com/jonschlinkert/git-user-name): Get a user's name from git config at the project or global scope, depending on what git uses in the current context.
+- [git-username](https://github.com/jonschlinkert/git-username): Get the username from a git remote origin URL.
+- [github-username](https://github.com/sindresorhus/github-username): Get a GitHub username from an email address
+- [parse-git-config](https://github.com/jonschlinkert/parse-git-config): Parse `.git/config` into a JavaScript object. sync or async.
+
+
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/github-config/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
