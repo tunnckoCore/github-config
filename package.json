@@ -26,5 +26,21 @@
   "files": [
     "index.js"
   ],
-  "keywords": []
+  "keywords": [
+    "apps",
+    "cfg",
+    "conf",
+    "config",
+    "data",
+    "get",
+    "git",
+    "gitconfig",
+    "github",
+    "github-config",
+    "hub",
+    "secure",
+    "set",
+    "store",
+    "token"
+  ]
 }
