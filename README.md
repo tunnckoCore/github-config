@@ -8,7 +8,6 @@
 ## Install
 ```
 npm i github-config --save
-npm test
 ```
 
 
@@ -117,5 +116,5 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [freenode-url]: http://webchat.freenode.net/?channels=charlike
 [freenode-img]: https://img.shields.io/badge/freenode-%23charlike-5654a4.svg
 
-[new-message-url]: https://github.com/tunnckoCore/messages
+[new-message-url]: https://github.com/tunnckoCore/ama
 [new-message-img]: https://img.shields.io/badge/ask%20me-anything-green.svg
