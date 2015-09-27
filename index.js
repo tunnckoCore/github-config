@@ -12,10 +12,10 @@ var isObject = require('is-plain-object')
 var gitconfig = require('git-config-path')
 var extend = require('extend-shallow')
 var lazy = require('lazy-cache')(require)
-lazy.ini = lazy('ini')
-lazy.omit = lazy('object.omit')
-lazy.write = lazy('write')
-lazy.merge = lazy('merge-deep')
+lazy('ini')
+lazy('object.omit', 'omit')
+lazy('write')
+lazy('merge-deep', 'merge')
 
 /**
  * If you give some data to `config` it will be merged
@@ -44,16 +44,16 @@ module.exports = function githubConfig (config) {
     return null
   }
 
-  config = lazy.omit()(config, ['cwd', 'path'])
+  config = lazy.omit(config, ['cwd', 'path'])
 
   if (cfg.hasOwnProperty('github') && !Object.keys(config).length) {
     return cfg.github
   }
 
-  var merge = lazy.merge()
+  var merge = lazy.merge
   var github = merge({}, cfg.github, config)
   cfg = merge({}, cfg, {github: github})
 
-  lazy.write().sync(opts.path, lazy.ini().stringify(cfg))
+  lazy.write.sync(opts.path, lazy.ini.stringify(cfg))
   return cfg.github
 }

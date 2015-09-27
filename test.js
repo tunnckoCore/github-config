@@ -9,6 +9,7 @@
 
 'use strict'
 
+var fs = require('fs')
 var test = require('assertit')
 var githubConfig = require('./index')
 
@@ -44,6 +45,9 @@ test('github-config:', function () {
       path: 'fixture.ini'
     })
     test.deepEqual(config, {username: 'tunnckoCore', foobar: 'charlike'})
-    done()
+    fs.writeFile('./fixture.ini', '[foo]\r\nbar=baz', function (err) {
+      test.ifError(err)
+      done()
+    })
   })
 })
