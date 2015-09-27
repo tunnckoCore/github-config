@@ -1,5 +1,4 @@
-# [github-config][author-www-url] [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] 
-
+# [github-config][author-www-url] [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] [![inch-ci docs][inchci-img]][inchci-url]
 > Easily store or get Github config data from `.gitconfig`. Useful when you want to store your github token and test your apps without exposing it.
 
 [![code climate][codeclimate-img]][codeclimate-url] [![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url]
@@ -80,6 +79,9 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 
 [license-url]: https://github.com/tunnckoCore/github-config/blob/master/LICENSE.md
 [license-img]: https://img.shields.io/badge/license-MIT-blue.svg
+
+[inchci-url]: https://inch-ci.org/github/tunnckoCore/github-config
+[inchci-img]: https://inch-ci.org/github/tunnckoCore/github-config.svg
 
 
 [codeclimate-url]: https://codeclimate.com/github/tunnckoCore/github-config

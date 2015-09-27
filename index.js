@@ -22,8 +22,7 @@ lazy.merge = lazy('merge-deep')
  * to already exisit, or will just add it to `[github]` field
  * of the `.gitconfig` or specified in `config.path`.
  *
- * **Example**
- *
+ * @example
  * ```js
  * var githubConfig = require('github-config')
  * var config = githubConfig({token: '8843d7f92416211de9ebb963ff4ce28125932878'})
@@ -37,7 +36,6 @@ lazy.merge = lazy('merge-deep')
  * @return {Object} config data
  * @api public
  */
-
 module.exports = function githubConfig (config) {
   var opts = extend({cwd: '/', path: gitconfig}, config)
   var cfg = parse.sync(opts)
