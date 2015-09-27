@@ -1,6 +1,6 @@
 {
   "name": "github-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easily store or get Github config data from `.gitconfig`. Useful when you want to store your github token and test your apps without exposing it.",
   "repository": "tunnckoCore/github-config",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",

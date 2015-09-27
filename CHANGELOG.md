@@ -1,5 +1,10 @@
 
 
+## 1.0.2 - 2015-09-27
+- Release v1.0.2 / npm@v1.0.2
+- bump deps - `lazy-cache`
+- add badge for `inch-ci` - service for docs and codestyle 
+
 ## 1.0.1 - 2015-09-15
 - Release v1.0.1 / npm@v1.0.1
 - update travis
